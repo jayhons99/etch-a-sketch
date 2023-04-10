@@ -7,15 +7,24 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/stylesheet.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+    </style>
   </head>
   <body>
-    <button id="reset" class="btn" type="button" onclick="resetBoard()">
-      New Size
-    </button>
-    <button id="clear" class="btn" type="button" onclick="clearBoard()">
-      Clear Board
-    </button>
-    <div class="container"></div>
+    <div class="header">
+      <h1>SketchPad</h1>
+      <div class="directions">Hover over the area to start drawing!</div>
+    </div>
+    <div class="main">
+      <button id="reset" class="btn" type="button" onclick="resetBoard()">
+        New Size
+      </button>
+      <button id="clear" class="btn" type="button" onclick="clearBoard()">
+        Clear Board
+      </button>
+      <div class="container"></div>
+    </div>
     <script src="js/script.js" async defer></script>
   </body>
 </html>

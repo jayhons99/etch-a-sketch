@@ -29,7 +29,7 @@ function squareHoverEffect() {
   const squares = document.querySelectorAll(".square");
 
   squares.forEach((square) => {
-    square.addEventListener("dragover", (event) => {
+    square.addEventListener("mouseover", (event) => {
       square.style.backgroundColor = "white";
       event.preventDefault();
     });
@@ -37,13 +37,17 @@ function squareHoverEffect() {
 }
 
 function resetBoard() {
-  let size = Number(prompt("Enter number of squares on each side: "));
+  let size = Number(prompt("Enter number of squares on each side: ", 16));
   if (size > 100) {
     alert("Size must be less than or equal to 100!");
     throw new Error("invalid size");
+  } else if (size <= 0) {
+    alert("Size must be greater than 0!");
+    throw new Error("invalid size");
+  } else {
+    removeDiv();
+    createBoard(size);
   }
-  removeDiv();
-  createBoard(size);
 }
 
 function clearBoard() {

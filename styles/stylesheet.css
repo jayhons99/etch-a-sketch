@@ -133,6 +133,14 @@ table {
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdf0d5;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5rem;
@@ -145,8 +153,19 @@ body {
   gap: 0;
   width: 50rem;
   height: 50rem;
+  border: 1.5rem solid #669bbc;
 }
 
 .btn {
   margin-bottom: 8px;
+}
+
+.header {
+  text-align: center;
+  margin: 12px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-family: "Sedgwick Ave Display", cursive;
 }
