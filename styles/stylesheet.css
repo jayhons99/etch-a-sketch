@@ -169,3 +169,7 @@ main {
   font-size: 32px;
   font-family: "Sedgwick Ave Display", cursive;
 }
+
+.footer {
+  margin: 8px;
+}
