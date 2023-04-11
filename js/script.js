@@ -14,18 +14,6 @@ function createBoard(numOfSquares) {
       container.appendChild(createDiv(container.clientWidth / numOfSquares));
     }
   }
-  squareHoverEffect();
-}
-
-function removeDiv() {
-  const parent = document.querySelector(".container");
-
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
-}
-
-function squareHoverEffect() {
   const squares = document.querySelectorAll(".square");
 
   squares.forEach((square) => {
@@ -36,18 +24,25 @@ function squareHoverEffect() {
   });
 }
 
-function resetBoard() {
-  let size = Number(prompt("Enter number of squares on each side: ", 16));
-  if (size > 100) {
-    alert("Size must be less than or equal to 100!");
-    throw new Error("invalid size");
-  } else if (size <= 0) {
-    alert("Size must be greater than 0!");
-    throw new Error("invalid size");
-  } else {
-    removeDiv();
-    createBoard(size);
+function removeDiv() {
+  const parent = document.querySelector(".container");
+
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
   }
+}
+
+function resetBoard(value) {
+  // let size = Number(prompt("Enter number of squares on each side: ", 16));
+  // if (size > 100) {
+  //   alert("Size must be less than or equal to 100!");
+  //   throw new Error("invalid size");
+  // } else if (size <= 0) {
+  //   alert("Size must be greater than 0!");
+  //   throw new Error("invalid size");
+  // } else {
+  removeDiv();
+  createBoard(value);
 }
 
 function clearBoard() {
@@ -60,5 +55,17 @@ function clearBoard() {
 function initialize() {
   createBoard(16);
 }
+
+const sliderInput = document.getElementById("size");
+const output = document.querySelectorAll(".value");
+
+output.forEach((text) => {
+  text.textContent = sliderInput.value;
+
+  sliderInput.addEventListener("input", (e) => {
+    text.textContent = sliderInput.value;
+    resetBoard(sliderInput.value);
+  });
+});
 
 initialize();

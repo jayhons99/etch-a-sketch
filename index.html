@@ -17,9 +17,13 @@
       <div class="directions">Hover over the area to start drawing!</div>
     </div>
     <div class="main">
-      <button id="reset" class="btn" type="button" onclick="resetBoard()">
+      <!-- <button id="reset" class="btn" type="button" onclick="resetBoard()">
         New Size
-      </button>
+      </button> -->
+      <div class="controls">
+        <input type="range" id="size" name="size" min="1" max="64" value="16" />
+        <p><output class="value"></output> x <output class="value"></output></p>
+      </div>
       <button id="clear" class="btn" type="button" onclick="clearBoard()">
         Clear Board
       </button>

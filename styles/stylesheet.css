@@ -173,3 +173,11 @@ main {
 .footer {
   margin: 8px;
 }
+
+.controls {
+  display: flex;
+}
+
+.value {
+  font-size: 20px;
+}
